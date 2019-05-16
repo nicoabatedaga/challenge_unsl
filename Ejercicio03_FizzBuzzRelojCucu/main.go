@@ -9,9 +9,9 @@ import (
 	* Cuando un minuto es divisible por tres, el reloj dirá la palabra "Fizz".
 	* Cuando un minuto es divisible por cinco, el reloj dirá la palabra "Buzz".
 	* Cuando un minuto es divisible por ambos, el reloj dirá "Fizz Buzz", con dos excepciones:
-		* En la hora, en lugar de "Fizz Buzz", la puerta del reloj se abrirá, y el pájaro cucu saldrá y "Cucuu" entre una y doce veces, según la hora.
-		* En la media hora, en lugar de "Fizz Buzz", la puerta del reloj se abrirá, y el cuco saldrá y "Cucuu" solo una vez.
-	* Con minutos que no son divisibles entre tres o cinco, un sonido "tick".
+		* A la hora en punto, en lugar de "Fizz Buzz", el pájaro cucu saldrá y dira "Cucuu" entre una y doce veces, según la hora (01:00 = 1 vez && 13:00 = 1 vez).
+		* En la media hora, en lugar de "Fizz Buzz", el cucu saldrá y "Cucuu" solo una vez.
+	* Con minutos que no son divisibles entre tres o cinco, solo hara un sonido "tick".
 
 	"13:34"       "tick"
 	"21:00"       "Cucuu Cucuu Cucuu Cucuu Cucuu Cucuu Cucuu Cucuu Cucuu"
@@ -30,7 +30,7 @@ func main() {
 	}
 }
 
-// DateNow devuelve la HH:MM actual en formato de string
+// DateNow devuelve la HH:MM actual en formato de string (24hs)
 func DateNow() string {
 	hora := time.Now().Format("15:04")
 	fmt.Println(hora)
