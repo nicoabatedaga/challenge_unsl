@@ -7,7 +7,6 @@ import (
 func main() {
 	s := GenerarMails([]string{"Pedro Perez", "Pablo Perez", "Marta Sosa"})
 	fmt.Println(s)
-	return
 }
 
 /*
