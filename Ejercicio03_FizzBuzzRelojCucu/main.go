@@ -25,17 +25,19 @@ import (
 
 func main() {
 	for {
-		fmt.Println(RunCucu(dateNow()))
+		fmt.Println(RunCucu(DateNow()))
 		time.Sleep(1 * time.Minute)
 	}
 }
 
-func dateNow() string {
+// DateNow devuelve la HH:MM actual en formato de string
+func DateNow() string {
 	hora := time.Now().Format("15:04")
 	fmt.Println(hora)
 	return hora
 }
 
+// RunCucu recibe HH:MM y devuelve lo que corresponda
 func RunCucu(hora string) string {
 
 	// SOLUCIÓN
