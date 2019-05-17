@@ -11,6 +11,7 @@ func main() {
 	Si el valor es un múltiplo de 3: usar 'Fizz'
 	Si el valor es un múltiplo de 5: usar 'Buzz'
 	Si el valor es un múltiplo de 3 y 5: usar 'FizzBuzz'
+	Si no es múltiplo ni de 3 ni de 5 dejar el número como string
 */
 func FizzBuzz(list []int) (result []string) {
 
