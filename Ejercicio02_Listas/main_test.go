@@ -1,20 +1,33 @@
 package main
 
 import (
+	"reflect"
 	"testing"
-
-	"github.com/stretchr/testify/assert"
 )
 
-func TestGenerarMails(t *testing.T) {
-	assert := assert.New(t)
-	assert.Equal(
-		[]string{"rmiranda@ml.com", "mantonieta@ml.com", "rmiranda1@ml.com", "jperez@ml.com"},
-		GenerarMails([]string{"Roberto Miranda", "Maria Antonieta", "Raul Miranda", "Jose Perez"}),
-		"La lista que se genero no es la que se esperaba")
-
-	assert.Equal(
-		[]string{"rmiranda@ml.com", "rmiranda1@ml.com", "rmiranda2@ml.com", "rmiranda3@ml.com"},
-		GenerarMails([]string{"Roberto MirAnda", "RAul Miranda", "Raquel MIRANDA", "Rosa Miranda"}),
-		"La lista que se genero no es la que se esperaba")
+func TestOrdenarYSumar(t *testing.T) {
+	tests := []struct {
+		name    string
+		numeros []int64
+		want    []int64
+		want1   []int64
+		want2   []int64
+	}{
+		{"test1", []int64{12, 21, 33, 4, 1}, []int64{4, 14}, []int64{1, 21, 33}, []int64{5, 35, 33}},
+		{"test2", []int64{12, 21, 33, 4}, []int64{4, 12}, []int64{21, 33}, []int64{25, 35}},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			got, got1, got2 := OrdenarYSumar(tt.numeros)
+			if !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("OrdenarYSumar() got = %v, want %v", got, tt.want)
+			}
+			if !reflect.DeepEqual(got1, tt.want1) {
+				t.Errorf("OrdenarYSumar() got1 = %v, want %v", got1, tt.want1)
+			}
+			if !reflect.DeepEqual(got2, tt.want2) {
+				t.Errorf("OrdenarYSumar() got2 = %v, want %v", got2, tt.want2)
+			}
+		})
+	}
 }

@@ -5,21 +5,24 @@ import (
 )
 
 func main() {
-	s := GenerarMails([]string{"Pedro Perez", "Marta Sosa", "Pablo Perez"})
-	fmt.Println(s)
+	ListaDePares, ListaDeImpares, ListaDeSuma := OrdenarYSumar([]int64{12, 5, 12, 2, 33, 67, 99, 44, 3, 4, 67, 321, 9})
+	fmt.Println("Lista De Pares", ListaDePares)
+	fmt.Println("Lista De Impares", ListaDeImpares)
+	fmt.Println("Lista De Suma", ListaDeSuma)
 }
 
 /*
-	GenerarMails, recibe una lista de nombres formados como "NOMBRE APELLIDO" y devuelve
-	una lista de emails manteniendo el orden de la lista de entrada, los emails deben formarse como:
-	primera letra del nombre, seguido del apellido, seguido de @ml.com
-	IMPORTANTE: los emails deben ser completamente en minuscula y no deberian repetirse,
-	para ello se les agrega un numero antes del simbolo '@' 1,2,3,...
-	ejemplo: pperez@ml.com, pperez1@ml.com
+	Dado un slice de numeros se pide
+		Extraer los pares e impares a listas diferentes y ordenarlos de forma creciente
+		Realizar la suma, posicion a posicion almacenando el resultado en otro slice
+		La funcion OrdenarYSumar debe devolver los tres slice, en el siguiente orden: ListaDePares, ListaDeImpares, ListaDeSuma
+	Ejemplo
+		input: [12,21,33,4] -> output: [4,12], [21,33], [25,35]
+		input: [12,21,33,4,1] -> output: [4,14], [1,21,33], [5,35,33]
 */
-func GenerarMails(nombres []string) []string {
+func OrdenarYSumar(numeros []int64) ([]int64, []int64, []int64) {
 
 	// SOLUCIÓN
 
-	return []string{}
+	return []int64{}, []int64{}, []int64{}
 }
