@@ -18,7 +18,7 @@ Heroe,
 
 Devuelve true si es así, false de lo contrario
 */
-func Heroe(balas, drones int) bool {
+func Heroe(balas, dragones int) bool {
 
 	// SOLUCIÓN
 	return false
